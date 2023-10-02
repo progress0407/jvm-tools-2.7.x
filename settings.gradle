@@ -1,1 +1,3 @@
 rootProject.name = 'jvm-lab-tools-2.7.x'
+include 'spring-batch'
+
