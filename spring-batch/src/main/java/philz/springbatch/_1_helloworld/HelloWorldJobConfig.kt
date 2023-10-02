@@ -1,4 +1,4 @@
-package philz.springbatch.job
+package philz.springbatch._1_helloworld
 
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.Step
@@ -11,23 +11,23 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-class BasicJobConfig(
+class HelloWorldJobConfig(
     private val jobBuilderFactory: JobBuilderFactory,
     private val stepBuilderFactory: StepBuilderFactory
 ) {
 
     @Bean
-    fun helloWorldJob(basicStep: Step): Job {
+    fun helloWorldJob(helloWorldStep: Step): Job {
         return jobBuilderFactory.get("helloWorldJob")
             .incrementer(RunIdIncrementer())
-            .start(basicStep)
+            .start(helloWorldStep)
             .build()
     }
 
     @Bean
-    fun helloWorldStep(basicTasklet: Tasklet): Step {
+    fun helloWorldStep(helloWorldTasklet: Tasklet): Step {
         return stepBuilderFactory.get("helloWorldStep")
-            .tasklet(basicTasklet)
+            .tasklet(helloWorldTasklet)
             .build()
     }
 
