@@ -3,7 +3,8 @@ spring:
     job:
 #      names: ${job.name:NONE}
 #      names: "helloWorldJob"
-      names: "validatedParamJob"
+#      names: "validatedParamJob"
+      names: "jobListenerJob"
     jdbc:
       initialize-schema: always
   datasource:
