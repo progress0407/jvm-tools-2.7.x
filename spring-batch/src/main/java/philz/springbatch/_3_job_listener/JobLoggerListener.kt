@@ -24,6 +24,4 @@ class JobLoggerListener: JobExecutionListener {
             log.error { "Job is Failed"}
         }
     }
-
-
 }
