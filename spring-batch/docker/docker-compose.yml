@@ -3,7 +3,7 @@ version: '3'
 services:
   mysql:
     container_name: spring_batch
-    image: mysql:5.7
+    image: mysql:8-debian
     environment:
       MYSQL_DATABASE: "spring_batch"
       MYSQL_ROOT_PASSWORD: "pw"

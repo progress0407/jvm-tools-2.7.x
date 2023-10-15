@@ -4,13 +4,16 @@ spring:
 #      names: ${job.name:NONE}
 #      names: "helloWorldJob"
 #      names: "validatedParamJob"
-      names: "jobListenerJob"
+#      names: "jobListenerJob"
+      names: "trMigrationJob"
     jdbc:
       initialize-schema: always
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/spring_batch
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: pw
+    password: 1234
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: create
