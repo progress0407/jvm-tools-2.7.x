@@ -6,7 +6,8 @@ spring:
 #      names: "validatedParamJob"
 #      names: "jobListenerJob"
 #      names: "trMigrationJob"
-      names: "conditionalStepJob"
+#      names: "conditionalStepJob"
+      names: "multipleStepJob"
     jdbc:
       initialize-schema: always
   datasource:
