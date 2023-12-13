@@ -1,3 +1,5 @@
 rootProject.name = 'jvm-lab-tools-2.7.x'
 include 'spring-batch'
-
+include 'querydsl-sample'
+include 'querydsl-sample:java-module'
+include 'querydsl-sample:kotlin-module'

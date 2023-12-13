@@ -1,0 +1,25 @@
+def rootPath = rootProject.projectDir
+
+subprojects {
+
+    bootJar.enabled = true
+    jar.enabled = true
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        runtimeOnly 'com.h2database:h2'
+    }
+}
+
+project(':querydsl-sample:java-module') {
+    apply from: "$rootPath/gradle-script/java-querydsl-setting.gradle"
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+    }
+}
+
+project(':querydsl-sample:kotlin-module') {
+    apply from: "$rootPath/gradle-script/kotlin-querydsl-setting.gradle"
+}
