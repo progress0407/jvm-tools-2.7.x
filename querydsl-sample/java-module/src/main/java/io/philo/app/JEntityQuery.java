@@ -4,6 +4,9 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityManager;
+import java.util.List;
+
+import static io.philo.app.QJEntity.jEntity;
 
 @Component
 public class JEntityQuery {
@@ -14,10 +17,13 @@ public class JEntityQuery {
         this.queryBuilder = new JPAQueryFactory(entityManager);
     }
 
-    public void someQuery() {
+    public List<JEntityDto> searchAll() {
 
-//        List<T> dtos = queryBuilder
-//                .selectFrom(new JEntityDto(jEntity))
-//                .fetch();
+        List<JEntityDto> dtos = queryBuilder
+                .select(new QJEntityDto(jEntity))
+                .from(jEntity)
+                .fetch();
+
+        return dtos;
     }
 }
