@@ -1,3 +1,9 @@
+plugins {
+//    id 'org.jetbrains.kotlin.plugin.allopen' version '{Kotlin버전}'	// Gradle(Groovy)
+    id 'org.jetbrains.kotlin.plugin.allopen'
+    id 'org.jetbrains.kotlin.kapt'
+}
+
 def rootPath = rootProject.projectDir
 
 subprojects {
@@ -8,6 +14,12 @@ subprojects {
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
         runtimeOnly 'com.h2database:h2'
+    }
+
+    allOpen {
+        annotation("javax.persistence.Entity")
+        annotation("javax.persistence.Embeddable")
+        annotation("javax.persistence.MappedSuperclass")
     }
 }
 
