@@ -11,6 +11,11 @@ ext {
 }
 
 dependencies {
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // QueryDSL
     api 'com.querydsl:querydsl-jpa:5.0.0' // QueryDSL must have
     annotationProcessor 'com.querydsl:querydsl-apt:5.0.0:jpa' // QueryDSL must have (exactly this way, including :jpa)
     annotationProcessor 'javax.annotation:javax.annotation-api:1.3.2' // QueryDSL must have

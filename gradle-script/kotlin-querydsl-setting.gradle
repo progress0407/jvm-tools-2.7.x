@@ -2,14 +2,6 @@
  * Kotlin 에서 QueryDsl을 호환하기 위한 설정
  */
 
-apply plugin: 'org.jetbrains.kotlin.kapt'
-
-/*
-tasks.named('compileKotlin') {
-    dependsOn 'compileQuerydsl'
-}
-*/
-
 dependencies {
     implementation 'com.querydsl:querydsl-jpa:5.0.0'
     implementation 'com.querydsl:querydsl-apt:5.0.0'

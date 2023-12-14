@@ -1,7 +1,6 @@
 plugins {
-//    id 'org.jetbrains.kotlin.plugin.allopen' version '{Kotlin버전}'	// Gradle(Groovy)
-    id 'org.jetbrains.kotlin.plugin.allopen'
-    id 'org.jetbrains.kotlin.kapt'
+    id 'org.jetbrains.kotlin.plugin.allopen' // version "$kotlinVersion"
+    id 'org.jetbrains.kotlin.kapt' // version "$kotlinVersion"    // Kotlin Annotation Processing Tool
 }
 
 def rootPath = rootProject.projectDir
@@ -25,13 +24,9 @@ subprojects {
 
 project(':querydsl-sample:java-module') {
     apply from: "$rootPath/gradle-script/java-querydsl-setting.gradle"
-
-    dependencies {
-        compileOnly 'org.projectlombok:lombok'
-        annotationProcessor 'org.projectlombok:lombok'
-    }
 }
 
 project(':querydsl-sample:kotlin-module') {
+    apply plugin: 'org.jetbrains.kotlin.kapt'
     apply from: "$rootPath/gradle-script/kotlin-querydsl-setting.gradle"
 }
